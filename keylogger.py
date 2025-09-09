@@ -1,8 +1,14 @@
-# Just testing my understanding of writing, reading and appending to files in Python
+from pynput.mouse import Controller
+from pynput.keyboard import Controller
 
-f= open("log.txt","a")
-f.write("My Name is Emmanuel\n")
-f.close()
+def controlMouse():
+    mouse = Controller()
+    mouse.position = (102, 20)
+    print(f"Mouse moved to: {mouse.position}")
 
-with open("log_1.txt","a") as f:
-    f.write("when using the 'with' you do not need to close the file, its automatically does it for you\n")
+def controlKeyboard():
+    keyboard = Controller()
+    keyboard.type('My Name is Emmanuel, Growing!!') 
+
+
+controlKeyboard()

